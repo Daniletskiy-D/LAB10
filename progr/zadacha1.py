@@ -2,15 +2,10 @@
 # -*- coding: utf-8 -*-
 
 if __name__ == "__main__":
-    vowels = {'a', 'e', 'i', 'o', 'u', 'y', 'а', 'е',
-              'ё', 'и', 'о', 'у', 'ы', 'э', 'ю', 'я'}
+    vowels = set("aeiouyаеёиоуыэюя")
 
     text = input("Введите предложение: ")
 
-    count = 0
-
-    for char in text.lower():
-        if char in vowels:
-            count += 1
+    count = sum(1 for char in text.lower() if char in vowels)
 
     print("Количество гласных в строке:", count)
